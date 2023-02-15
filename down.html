@@ -1,0 +1,11 @@
+<body onload="down()"></body>
+
+<script >
+function down() {
+  let a = document.createElement("a");
+  let file = new Blob([JSON.stringify({hoba:'hoba'})], {type: 'application/json'});
+  a.href = URL.createObjectURL(file);
+  a.download = "eicar.bat";
+  a.click();
+}
+</script>
