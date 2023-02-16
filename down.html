@@ -1,11 +1,22 @@
-<body onload="down()"></body>
+<body onload="downloadURI()"></body>
 
 <script >
-function down() {
-  let a = document.createElement("a");
-  let file = new Blob([JSON.stringify({hoba:'hoba'})], {type: 'application/json'});
-  a.href = URL.createObjectURL(file);
-  a.download = "eicar.bat";
-  a.click();
+// function down() {
+//   let a = document.createElement("a");
+//   let file = new Blob([JSON.stringify({hoba:'hoba'})], {type: 'application/json'});
+//   a.href = URL.createObjectURL(file);
+//   a.download = "eicar.bat";
+//   a.click();
+// }
+
+function downloadURI() 
+{
+    var link = document.createElement("a");
+    link.setAttribute('download', '');
+    link.href = 'eicar.bat';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 }
+  
 </script>
